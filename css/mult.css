@@ -1,0 +1,63 @@
+/*
+ Name:Emmanuel Rosario
+ Email: Emmanuel_Rosario@student.uml.edu
+ Affiliation: Student at UMass Lowell in course 91.61 GUI Programming I
+ Date: November 15, 2018
+ Assignment No.6
+ Description:
+ On September 11,2018
+ For this assignment we were task to create an interactive dynamically table based on parameters entered
+ in an HTML form. It contains a form for user input, and a JavaScript program to calculate what
+ the user inputs. This assignment was done using bootstrapa, css and javascript.
+  We were also task to use the HTML5 and CSS validations service.
+ */
+
+body {
+    background-color: black;
+}
+
+/* center header 1 and color */
+h1 {
+    color: red;
+    text-align: center;
+}
+
+/* space between the buttom and table */
+.printt{
+    padding-top: 20px;
+}
+
+/* background color for the table headers */
+th {
+    background-color: black;
+    color: red;
+}
+
+/* background color for the table rows */
+tr {
+    background-color: white;
+}
+
+/* overwite the table width from boostrap *//
+.table{
+    width: 50%;
+}
+
+/* overwite the form width from boostrap *//
+.col-6{
+    max-width: 30%;
+}
+.container {
+    background-color: red;
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+/* add the W3C validation icons */
+/*
+#val p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
