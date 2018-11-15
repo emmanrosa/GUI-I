@@ -15,15 +15,20 @@
 function multfunction(){
 
     var sh1 = document.getElementById("sh").value; // Starting Horizontal
+    sh1 = parseInt(sh1);
     var eh2 = document.getElementById("eh").value; // Ending Horizontal
+    eh2 = parseInt(eh2);
     var sv3 = document.getElementById("sv").value; // Starting Vertical
+    sv3 = parseInt(sv3);
     var ev4 = document.getElementById("ev").value; // Ending Vertical
+    ev4 = parseInt(ev4);
     var ntable = document.getElementById("printtables");
     var result = '<tr>';
     var tablen = '<tr> <th> </th>';
     
     //Here I call the function checks to validate all the inputs
     if (!checks(sh1, eh2, sv3, ev4)){
+        return;
         }else {
             /*
                 the fallow if statements check and swap if starting number is greater than
@@ -33,12 +38,13 @@ function multfunction(){
                 var temp = sh1;
                 sh1 = eh2;
                 eh2 = temp;
-            } if(sv3 > ev4){
-                var temp_n = sv3;
-                sv3 = ev4;
-                ev4 = temp_n;
             }
-    
+            //Number.parseInt(
+            if(sv3 > ev4){
+                var temp_num = sv3;
+                sv3 = ev4;
+                ev4 = temp_num;
+            }
     for(var k=sh1; k<=eh2; k++){
          tablen += '<th> '+ k +'</th>';
     }
@@ -73,6 +79,8 @@ function checks(num1, num2, num3, num4){
     } else if(isNaN(num4)){
          alert('Must input number for Ending Vertical');
         return false;
+    } else if(num1===0 || num2===0 || num3===0 || num4===0){
+        return true;
     } else if(num1==null || num1=="",num2==null || num2=="",num3==null || num3=="",num4==null || num4==""){
             alert('Please Fill All Required Field');
               return false;
