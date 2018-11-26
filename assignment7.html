@@ -1,0 +1,59 @@
+<!--
+ Name:Emmanuel Rosario
+ Email: Emmanuel_Rosario@student.uml.edu
+ Affiliation: Student at UMass Lowell in course 91.61 GUI Programming I
+ Date: November 15, 2018
+ Assignment No.6
+ Description:
+ On September 11,2018
+ For this assignment we were task to create an interactive dynamically table based on parameters entered
+ in an HTML form. It contains a form for user input, and a JavaScript program to calculate what
+ the user inputs. This assignment was done using bootstrapa, css and javascript.
+ We were also task to use the HTML5 and CSS validations service.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment No.7</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mult.css">
+    
+  </head>
+  <body>
+    <h1>Multiplication Table</h1>
+    <div class="container">
+      <form id="my-form">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="sh">Starting Horizontal</label>
+            <input type="number" class="form-control" id="sh" name="sth" placeholder="Starting Horizontal"  required />
+          </div>
+          <div class="form-group">
+            <label for="eh">Ending Horizontal</label>
+            <input type="number" class="form-control" id="eh" name="enh" placeholder="Ending Horizontal" required />
+          </div>
+          <div class="form-group">
+            <label for="sv">Starting Vertical</label>
+            <input type="number" class="form-control" id="sv" name="stv" placeholder="Starting Vertical" required />
+          </div>
+          <div class="form-group">
+            <label for="ev">Ending Vertical</label>
+            <input type="number" class="form-control" id="ev" name="env" placeholder="Ending Vertical" required />
+          </div>
+          <button type="submit" class="btn btn-primary" id="btmsubmit">Submit</button>
+        </div>
+     </form>
+      <div class="printt">
+	<table class="table table-bordered table-hover" id="printtables"></table>
+      </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="js/mult_val.js"></script>
+  </body>
+</html>
