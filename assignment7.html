@@ -20,40 +20,36 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mult.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="js/mult_val.js"></script>
     
   </head>
   <body>
     <h1>Multiplication Table</h1>
     <div class="container">
-      <form id="my-form">
+      <form id="my-form" method="GET" action="">
         <div class="col-6">
-          <div class="form-group">
             <label for="sh">Starting Horizontal</label>
-            <input type="number" class="form-control" id="sh" name="sth" placeholder="Starting Horizontal"  required />
-          </div>
-          <div class="form-group">
+            <input type="number" class="form-control" id="sh" name="sh" placeholder="Starting Horizontal"  required />
+         
             <label for="eh">Ending Horizontal</label>
-            <input type="number" class="form-control" id="eh" name="enh" placeholder="Ending Horizontal" required />
-          </div>
-          <div class="form-group">
+            <input type="number" class="form-control" id="eh" name="eh" placeholder="Ending Horizontal" required />
+        
             <label for="sv">Starting Vertical</label>
-            <input type="number" class="form-control" id="sv" name="stv" placeholder="Starting Vertical" required />
-          </div>
-          <div class="form-group">
+            <input type="number" class="form-control" id="sv" name="sv" placeholder="Starting Vertical" required />
+            
             <label for="ev">Ending Vertical</label>
-            <input type="number" class="form-control" id="ev" name="env" placeholder="Ending Vertical" required />
-          </div>
-          <button type="submit" class="btn btn-primary" id="btmsubmit">Submit</button>
+            <input type="number" class="form-control" id="ev" name="ev" placeholder="Ending Vertical" required />
+           <input type="submit" class="btn btn-primary" value="Submit"/>
         </div>
      </form>
       <div class="printt">
-	<table class="table table-bordered table-hover" id="printtables"></table>
+  <table class="table table-bordered table-hover" id="printtables"></table>
       </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-    <script src="js/mult_val.js"></script>
+
   </body>
 </html>

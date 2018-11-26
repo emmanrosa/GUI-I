@@ -10,26 +10,26 @@
  the user inputs. This assignment was done using bootstrapa, css and jquery and javascript.
  sources: https://jqueryvalidation.org/validate/
  */
-$(function () {
-    $("#my-form").validate({
-	//errorElement: "span",
-	rules:{
-            sth:{
+//function valnumbers() {
+$(document).ready(function () {
+    $('#my-form').validate({
+	rules: {
+            sh:{
 		Required: true,
 		number: true,
 		min:0
             },
-            enh:{
+            eh:{
 		Required: true,
 		number: true,
         min:0
             },
-            stv:{
+            sv:{
 		Required: true,
 		number: true,
         min:0
             },
-            env:{
+            ev:{
 		Required: true,
 		number: true,
         min:0
@@ -57,14 +57,22 @@ $(function () {
         min: "Minimum value must be greater than 0"
             }
 	},
+
 	submitHandler: function() {
+         alert("Do some stuff...");
             multfunction();
-            console.log("The tablet");
-            // return false;
-	}
+            //console.log("The tablet");
+            return false;
+	},
+
+    invalidHandler: function() {
+      $("#printtables").empty();
+    }
 	
     });
+    
 });
+//}
 
 function multfunction(){
     
@@ -115,7 +123,7 @@ function multfunction(){
     //ntable.innerHTML=finaln;
     $("#printtables").html(finaln);
    //    }
-     return false;
+    //return false;
 }
 /*
     This function checks for if the inputs are numbers and the input field are not empty.
