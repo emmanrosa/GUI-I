@@ -2,14 +2,13 @@
  Name:Emmanuel Rosario
  Email: Emmanuel_Rosario@student.uml.edu
  Affiliation: Student at UMass Lowell in course 91.61 GUI Programming I
- Date: November 15, 2018
- Assignment No.6
+ Date: November 18, 2018
+ Assignment No.7
  Description:
- On September 11,2018
  For this assignment we were task to create an interactive dynamically table based on parameters entered
  in an HTML form. It contains a form for user input, and a JavaScript program to calculate what
  the user inputs. This assignment was done using bootstrapa, css and javascript.
- We were also task to use the HTML5 and CSS validations service.
+ We were also task to use the jQuery Validation Plugin .
   -->
 
 <!DOCTYPE html>
@@ -20,11 +19,6 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mult.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-    <script src="js/mult_val.js"></script>
     
   </head>
   <body>
@@ -33,23 +27,31 @@
       <form id="my-form" method="GET" action="">
         <div class="col-6">
             <label for="sh">Starting Horizontal</label>
-            <input type="number" class="form-control" id="sh" name="sh" placeholder="Starting Horizontal"  required />
+            <input type="text" class="form-control" id="sh" name="sh" placeholder="Starting Horizontal" />
          
             <label for="eh">Ending Horizontal</label>
-            <input type="number" class="form-control" id="eh" name="eh" placeholder="Ending Horizontal" required />
+            <input type="text" class="form-control" id="eh" name="eh" placeholder="Ending Horizontal" />
         
             <label for="sv">Starting Vertical</label>
-            <input type="number" class="form-control" id="sv" name="sv" placeholder="Starting Vertical" required />
+            <input type="text" class="form-control" id="sv" name="sv" placeholder="Starting Vertical" />
             
             <label for="ev">Ending Vertical</label>
-            <input type="number" class="form-control" id="ev" name="ev" placeholder="Ending Vertical" required />
-           <input type="submit" class="btn btn-primary" value="Submit"/>
+            <input type="text" class="form-control" id="ev" name="ev" placeholder="Ending Vertical" />
+             <br>
+           <input type="submit" id="idsubmit" class="btn btn-primary" value="Submit"/>
         </div>
      </form>
       <div class="printt">
   <table class="table table-bordered table-hover" id="printtables"></table>
       </div>
     </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+
+    <script src="js/mult_val.js"></script>
 
   </body>
 </html>

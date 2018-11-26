@@ -2,139 +2,129 @@
  Name:Emmanuel Rosario
  Email: Emmanuel_Rosario@student.uml.edu
  Affiliation: Student at UMass Lowell in course 91.61 GUI Programming I
- Date: November 22, 2018
+ Date: November 18, 2018
  Assignment No.7
  Description:
  For this assignment we were task to create an interactive dynamically table based on parameters entered
  in an HTML form. It contains a form for user input, and a JavaScript program to calculate what
- the user inputs. This assignment was done using bootstrapa, css and jquery and javascript.
+ the user inputs. This assignment was done using bootstrapa, css and the jQuery Validation Plugin and javascript.
  sources: https://jqueryvalidation.org/validate/
+ I also got some help from Marittya Keu, I was using uppercase for Required instead of required in validation rules.
  */
-//function valnumbers() {
-$(document).ready(function () {
+//Here I call the function checks to validate all the inputs
+$(function () {
     $('#my-form').validate({
 	rules: {
             sh:{
-		Required: true,
+		required: true,
 		number: true,
 		min:0
             },
             eh:{
-		Required: true,
+		required: true,
 		number: true,
-        min:0
+		min:0
             },
             sv:{
-		Required: true,
+		required: true,
 		number: true,
-        min:0
+		min:0
             },
             ev:{
-		Required: true,
+		required: true,
 		number: true,
-        min:0
+		min:0
             }
 	},
 	messages:{
             sh:{
 		required: "ERROR: no number was entered.",
 		number:"Must input number for Starting Horizontal",
-        min: "Minimum value must be greater than 0"
+		min: "Minimum value must be greater than 0"
             },
             eh:{
 		required: "ERROR: no number was entered.",
 		number:"Must input number for Endiing Horizontal",
-        min: "Minimum value must be greater than 0"
+		min: "Minimum value must be greater than 0"
             },
             sv:{
 		required: "ERROR: no number was entered.",
 		number:"Must input number for Starting Vertical",
-        min: "Minimum value must be greater than 0"
+		min: "Minimum value must be greater than 0"
             },
             ev:{
 		required: "ERROR: no number was entered.",
 		number:"Must input number for Ending Vertical",
-        min: "Minimum value must be greater than 0"
+		min: "Minimum value must be greater than 0"
             }
 	},
-
-	submitHandler: function() {
-         alert("Do some stuff...");
+	
+	submitHandler: function(e) {
             multfunction();
-            //console.log("The tablet");
-            return false;
 	},
-
-    invalidHandler: function() {
-      $("#printtables").empty();
-    }
+	
+	invalidHandler: function() {
+	    $("#printtables").empty();
+	}
 	
     });
-    
 });
-//}
+
 
 function multfunction(){
-    
-    var sh1 = document.getElementById("sh").value; // Starting Horizontal
+    var sh1 = $('#sh').val(); // Starting Horizontal
     sh1 = parseInt(sh1);
-    var eh2 = document.getElementById("eh").value; // Ending Horizontal
+    var eh2 = $('#eh').val(); // Ending Horizontal
     eh2 = parseInt(eh2);
-    var sv3 = document.getElementById("sv").value; // Starting Vertical
+    var sv3 = $('#sv').val(); // Starting Vertical
     sv3 = parseInt(sv3);
-    var ev4 = document.getElementById("ev").value; // Ending Vertical
+    var ev4 = $('#ev').val(); // Ending Vertical
     ev4 = parseInt(ev4);
-    var ntable = document.getElementById("printtables");
+    
     var result = '<tr>';
     var tablen = '<tr> <th> </th>';
     
-    //Here I call the function checks to validate all the inputs
-   // if (!checks(sh1, eh2, sv3, ev4)){
-   //     return;
-   //     }else {
-            /*
-                the fallow if statements check and swap if starting number is greater than
-                the ending number for both the horizontal and vertical.
+    /*
+      the fallow if statements check and swap if starting number is greater than
+      the ending number for both the horizontal and vertical.
              */
-            if(sh1 > eh2){
-                var temp = sh1;
-                sh1 = eh2;
-                eh2 = temp;
-            }
-            //Number.parseInt(
-            if(sv3 > ev4){
-                var temp_num = sv3;
+    if(sh1 > eh2){
+        var temp = sh1;
+        sh1 = eh2;
+        eh2 = temp;
+    }
+    if(sv3 > ev4){
+        var temp_num = sv3;
                 sv3 = ev4;
-                ev4 = temp_num;
-            }
+        ev4 = temp_num;
+    }
     for(var k=sh1; k<=eh2; k++){
-         tablen += '<th> '+ k +'</th>';
+        tablen += '<th> '+ k +'</th>';
     }
     tablen +='</tr>';
-        for(var i=sv3; i<=ev4; i++){
-            result += '<tr> <th>'+ i +'</th>'
-            for(var j=sh1; j<=eh2; j++){
-                result +='<td>' + (i*j) + '</td>';
-            }
-            result += '</tr>';
+    for(var i=sv3; i<=ev4; i++){
+        result += '<tr> <th>'+ i +'</th>'
+        for(var j=sh1; j<=eh2; j++){
+            result +='<td>' + (i*j) + '</td>';
         }
+        result += '</tr>';
+    }
     //console.log(result);
     var finaln = tablen + result;
     //ntable.innerHTML=finaln;
     $("#printtables").html(finaln);
-   //    }
-    //return false;
+    //    }
 }
 /*
-    This function checks for if the inputs are numbers and the input field are not empty.
-    I also, send back an alart and return boolean.
- */
+  This function checks for if the inputs are numbers and the input field are not empty.
+  I also, send back an alart and return boolean.
+*/
 /*
-function checks(num1, num2, num3, num4){
-    
-    if(isNaN(num1)){
-        alert('Must input number for Starting Horizontal');
-        return false;
+  function checks(num1, num2, num3, num4){
+  
+  if(isNaN(num1)){
+  alert('Must input number for Starting Horizontal');
+  return false;
     } else if(isNaN(num2)){
          alert('Must input number for Ending Horizontal');
         return false;
