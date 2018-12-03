@@ -1,0 +1,77 @@
+<!--
+ Name:Emmanuel Rosario
+ Email: Emmanuel_Rosario@student.uml.edu
+ Affiliation: Student at UMass Lowell in course 91.61 GUI Programming I
+ Date: November 30, 2018
+ Assignment No.8
+ Description:
+ For this assignment we were task to create an interactive dynamically table based on parameters entered
+ in an HTML form. It contains a form for user input, and a JavaScript program to calculate what
+ the user inputs. This assignment was done using bootstrapa, css and javascript.
+ We were also task to use the jQuery Validation Plugin .
+
+ for this assignment
+ https://stackoverflow.com/questions/8372529/jquery-ui-slider-not-displayed
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment No.8</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mult_hw8.css">
+    
+  </head>
+  <body>
+    <h1>Multiplication Table</h1>
+    <div class="container">
+      <form id="my-form" method="GET" action="">
+        <div class="col-6">
+          <label for="sh">Starting Horizontal</label>
+          <input type="text" class="form-control" id="sh" name="sh" placeholder="Starting Horizontal" />
+          <div id="slider_hs"></div>
+          
+          <label for="eh">Ending Horizontal</label>
+          <input type="text" class="form-control" id="eh" name="eh" placeholder="Ending Horizontal" />
+          <div id="slider_he"></div>
+	  
+          <label for="sv">Starting Vertical</label>
+          <input type="text" class="form-control" id="sv" name="sv" placeholder="Starting Vertical" />
+          <div id="slider_vs"></div>
+	  
+          <label for="ev">Ending Vertical</label>
+          <input type="text" class="form-control" id="ev" name="ev" placeholder="Ending Vertical" />
+          <div id="slider_ve"></div>
+          <br>
+          <input type="submit" id="idsubmit" class="btn btn-primary" onClick="add_table()" value="add table"/>
+        </div>
+      </form>
+      <div class="printt">
+      	<table class="table table-bordered table-hover" id="printtables"></table>
+      </div>
+      <span>You may also save up to 12 Multiplication table. They will appear below this line when the "Save Table" button is pressed. </span>
+    </div>
+    <br><br> 
+    <div id="tabs">
+      <ul>
+      </ul>
+    </div>
+  </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="js/mult_jval.js"></script>
+
+</body>
+</html>
