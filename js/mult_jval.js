@@ -7,24 +7,29 @@
  Description:
  For this assignment we were task to create an interactive dynamically table based on parameters entered
  in an HTML form. It contains a form for user input, and a JavaScript program to calculate what
- the user inputs. This assignment was done using bootstrapa, css and the jQuery Validation Plugin and javascript.
- sources: https://jqueryvalidation.org/validate/
+ the user inputs. This assignment was done using bootstrapa, cs, the jQuery Validation Plugin, ui and javascript.
+
+    sources: https://jqueryvalidation.org/validate/
+             https://jqueryui.com/tabs/#manipulation
+             https://stackoverflow.com/questions/8372529/jquery-ui-slider-not-displayed
  */
 
 $(document).ready( function() {
     slider_bar();
     validate();
-   auto_submit();
+    change_sub();
 });
 
-//Here I call the function checks to validate all the inputs
-function auto_submit() {
+//this function works like an auto submit
+function change_sub() {
     // If the form is valid
-    if( $("form#my-form").valid() == true ) {
-      // Then make it submit, which should update the tab in the process.
-      $("form#my-form").submit();
+    if($("#my-form").valid() == true) {
+      //save tab or tabs if is valid
+      $("#my-form").submit();
     }
   }
+
+//Here I call the function checks to validate all the inputs
 function validate() {
     $('#my-form').validate({
 	rules: {
@@ -100,13 +105,12 @@ function slider_bar(){
         max: 12,
         slide: function(event, ui) {
           $("#sh").val(ui.value);
-         // console.log("#hs");
-        auto_submit();  
+        change_sub();  
         }
       });
       $("#sh").change(function() {
         $("#slider_hs").slider("value", this.value);
-       auto_submit();  
+       change_sub();  
       });
     
       // Horizontal End Slider
@@ -115,12 +119,12 @@ function slider_bar(){
         max: 12,
         slide: function(event, ui) {
           $("#eh").val(ui.value);
-         auto_submit();  
+         change_sub();  
         }
       });
       $("#eh").change(function() {
         $("#slider_he").slider("value", this.value);
-       auto_submit();  
+       change_sub();  
       });
     
       // Vertical Start Slider
@@ -129,12 +133,12 @@ function slider_bar(){
         max: 12,
         slide: function(event, ui) {
           $("#sv").val(ui.value);
-         auto_submit();  
+         change_sub();  
         }
       });
       $("#sv").change(function() {
         $("#slider_vs").slider("value", this.value);
-         auto_submit();  
+         change_sub();  
       });
     
       // Vertical End Slider
@@ -143,18 +147,17 @@ function slider_bar(){
         max: 12,
         slide: function(event, ui) {
           $("#ev").val(ui.value);
-          auto_submit();  
+          change_sub();  
         }
       });
       $("#ev").change(function() {
         $("#slider_ve").slider("value", this.value);
-         auto_submit();  
+         change_sub();  
       });
 }
 var num_list = 1;
 function add_table() {
     var tabCount = $("#tabs li").length + 1;
-    console.log("Current tab count is: " + tabCount);
   
     if(tabCount > 12) {
       alert("Sorry, only 12 multiplication tables may be saved at the same time. Please delete one to save another table.");
@@ -162,7 +165,7 @@ function add_table() {
     }
   
     // This should initialize the jQuery UI tabs.
-    $( "#tabs" ).tabs();
+    $("#tabs").tabs();
   
     var sh1 = $('#sh').val(); // Starting Horizontal
     sh1 = parseInt(sh1);
@@ -184,7 +187,7 @@ function add_table() {
     }
     if(sv3 > ev4){
         var temp_num = sv3;
-                sv3 = ev4;
+        sv3 = ev4;
         ev4 = temp_num;
     }
   
@@ -196,21 +199,20 @@ function add_table() {
                 "<span class='ui-icon ui-icon-close' role='presentation'></span>" + "</li>";
   
     // Add a new Title bar.
-    $( "div#tabs ul" ).append( title );
+    $("div#tabs ul").append( title );
   
     // Add the current multiplication table.
-    $( "div#tabs" ).append('<div id=tab-' + num_list + '>'+'<table class="table table-bordered table-hover"' + $("#printtables").html() +'</table>'+ '</div>');
-    console.log("Current tab count is: " + $("#printtables").html());
-    $( "#tabs" ).tabs("refresh");
+    $("div#tabs").append('<div id=tab-' + num_list + '>'+'<table class="table table-bordered table-hover"' + $("#printtables").html() +'</table>'+ '</div>');
+    $("#tabs").tabs("refresh");
   
-    $( "#tabs" ).tabs("option", "active", -1);
+    $("#tabs").tabs("option", "active", -1);
   
     /*
         Close icon: removing the tab on click
         https://jqueryui.com/tabs/#manipulation
     */
-    $( "#tabs" ).delegate( "span.ui-icon-close", "click", function() {
-        var num_li = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+    $("#tabs").delegate("span.ui-icon-close", "click", function() {
+        var num_li = $(this).closest("li").remove().attr("aria-controls");
         $( "#" + num_li).remove();
   
         // Refresh the tabs!
