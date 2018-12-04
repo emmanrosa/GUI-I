@@ -57,3 +57,7 @@ tr {
     margin-top: 10px;
     margin-bottom: 15px;
 }
+/* add space between the span and tabs*/
+#tabs{
+    margin-top: 50px;
+}
