@@ -5,15 +5,18 @@
   Date: December 9, 2018
   Assignment No.9
   Description: 
+   For this assignment we were task to create a bit of scrabble game.The user then drags tiles to 
+ the board to make a word, and you are to report his or her score, taking the letter values and 
+ bonus squares into consideration.
   sources:
   for the tiles images
   https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
   for the double lettle score image
   https://d1b10bmlvqabco.cloudfront.net/attach/icm9jynacvn5kx/i5ic1b2hwmz6nv/ihf34c9jbxpw/Scrabble_Board_OneLine.png
   for the rack image
-  https://cdn.pixabay.com/photo/2014/07/31/20/48/scrabble-tile-holder-406774_640.png
-
-  I used other sources based on the problem I run into, they can be found on the functions.  
+  https://cdn.pixabay.com/photo/2014/07/31/20/48/scrabble-tile-holder-406774_640.png  
+  Dictionary Lookups in JavaScript
+  https://johnresig.com/blog/dictionary-lookups-in-javascript/
   
 */
 
@@ -109,18 +112,7 @@ function loadgames(){
             tolerance: "fit",
             //revert: 'invalid',
             drop: function( event, ui ) {
-                //$(this).append(ui.draggable); 
-                //$(this).droppable('option', 'accept');
-                //console.log($(ui.draggable).attr('id');
-                var position = $(this).position();
-                var top = position.top;
-                var left = position.left;
-                //if (ui.draggable.attr('id') === $(this).attr('id')) {
-                 //   console.log("meee");
-              //  }
-   
-                // */
-                //;
+
                 scores[$(this).attr('value')] = $(this).attr('bonus') * getlettervalue($(ui.draggable).attr('id'));
                 // calls the function getaddword()
                 getaddword($(ui.draggable).attr('id'),$(this).attr('value'));
@@ -130,10 +122,7 @@ function loadgames(){
 
             },
             out: function( event, ui ) {
-               // $(this).droppable( "destroy" );
-                //$('#titles').prepend($(this).attr('id'));
                 
-               // console.log( $('#titles'));
                 scores[$(this).attr('value')] = 0;
                 totalscore -= $(this).attr('bonus') * getlettervalue($(ui.draggable).attr('id'));
                 if(totalscore < 0) totalscore = 0;
@@ -212,6 +201,10 @@ $.get( "dictionary/words.txt", function( txt ) {
 
 });
 
+/*
+    function diclookup() gets call when the user click on bottom check.
+    allows the user to check if the word is in the dictionary.
+*/
 function diclookup(){
     var newword = userwords.join('');
     //newword = newword.toLowerCase();
@@ -231,6 +224,11 @@ function diclookup(){
     }
 }
 
+/*
+    function reset() gets call when the user click on bottom reset.
+    allows the user to reset the current level if the don't like the 
+    given game tiles.
+*/
 function reset(){
    //location.reload();
    if (confirm('Are you sure you want reset the tiles?')) {
@@ -249,6 +247,11 @@ function reset(){
     }//
 }
 
+/*
+    function next() gets call when the user click on bottom next.
+    in order for the user to pass the current level they need to comple
+    a word.
+*/
 function next(){
     if(diclookup()){
         $('#board').empty();

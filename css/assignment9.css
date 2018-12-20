@@ -5,6 +5,8 @@
   Date: December 9, 2018
   Assignment No.9
   Description: 
+  For this assignment we were task to create a bit of scrabble game.The user then drags tiles to 
+  the board to make a word, and you are to report his or her score, taking the letter values and  bonus squares into consideration. 
   sources:
   for the tiles images
   https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
@@ -15,7 +17,6 @@
 */
 body{
     background-color: black;
-    
 }
 /* center header 1 */
 h1 {
