@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/assignment9.css">
+  </head>
+  <body>
+    <!-- page content -->
+    <h1>Scrabble</h1>
+    <!-- display level  -->
+    <div id="level"></div> 
+    <div id="keepsword" >Words:
+            <span id="word"></span> 
+    </div> 
+    <!-- display message  -->
+    <div id="info"></div>   
+    <!-- display score -->
+    <div id="keepscore" >Score:
+        <span id="score">0</span> 
+    </div>
+    <!-- display the games board -->
+    <div id="board" ></div>
+    <!-- display the tiles -->
+    <div id="tiles" ></div>
+    <br/>
+    <div id="btn" >
+        <button type="button" class="btn btn-primary" onclick="diclookup()">Check</button>
+        <button type="button" class="btn btn-primary" onclick="reset()">Reset</button>
+        <button type="button" class="btn btn-primary" onclick="next()">Next</button>
+    </div>
+    <div id="help">
+      <a href="https://scrabble.hasbro.com/en-us/rules" target="_blank">About The Game</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+    <script src="js/assignment9.js"></script>
+  </body>
+
+</html>

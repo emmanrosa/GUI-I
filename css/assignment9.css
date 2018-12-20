@@ -1,0 +1,50 @@
+/*
+  Name:Emmanuel Rosario
+  Email: Emmanuel_Rosario@student.uml.edu
+  Affiliation: Student at UMass Lowell in course 91.61 GUI Programming I
+  Date: December 9, 2018
+  Assignment No.9
+  Description: 
+  sources:
+  for the tiles images
+  https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
+  for the double lettle score image
+  https://d1b10bmlvqabco.cloudfront.net/attach/icm9jynacvn5kx/i5ic1b2hwmz6nv/ihf34c9jbxpw/Scrabble_Board_OneLine.png
+  for the rack image
+  https://cdn.pixabay.com/photo/2014/07/31/20/48/scrabble-tile-holder-406774_640.png
+*/
+body{
+    background-color: black;
+    
+}
+/* center header 1 */
+h1 {
+    color:red;
+    text-align: center;
+    padding-top: 100px;
+}
+#tiles, #board, #keepscore, #btn, #keepsword, #info, #level, #help {
+    color: red;
+    text-align: center;
+    margin: auto;
+}
+#help{
+    color: blue;
+    padding-top: 40px;
+}
+#keepscore{
+    padding-bottom: 20px;
+}
+  
+#tiles {
+    width: 500px;
+    height: 75px;
+    background-image: url('../images/rack.png');
+    background-size: 100% 100%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    
+  }
