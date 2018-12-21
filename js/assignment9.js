@@ -169,6 +169,9 @@ function getlettervalue(letter) {
 
 // This function keeps track words being add to board by the user
 function getaddword(letter,pos) {
+    if(letter === "Blank"){
+        letter = " ";
+    }
     userwords.splice(pos,0,letter);
     $("#word").html(userwords);
 }
